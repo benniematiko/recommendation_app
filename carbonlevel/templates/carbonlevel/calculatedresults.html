@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Add CSS styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <section id="dashboardSection">
+      <div id="dashboardContainer">
+        <div id="dashboardContent">
+          <h1>Calculated Results</h1>
+          <hr />
+          <p>
+            Your carbon emissons level is :
+            <span style="color: red"
+              >{{result}} <strong> carbon dioxide(CO2)</strong></span
+            >
+          </p>
+
+          <br />
+
+          {% if result < 300 %} You cabon footpring is normal <br />
+          {% elif result < 600 %} You cabon footpring is average <br />
+          {% elif result < 800 %} You cabon footpring is above average <br />
+          {% else %} You cabon footpring is very high. Consider changing your
+          source of power {% endif %}
+
+          <br />
+
+          <br />
+          <hr />
+          <br />
+          <a href="{% url 'dashboardpage' %}"> Discover more >></a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

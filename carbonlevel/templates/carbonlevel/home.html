@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BASE TEMPLATE</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/app.js' %}" defer></script>
+  </head>
+  <body bgcolor="green">
+    <div class="homePageWrapper">
+      {% block content %}
+      <section class="homeWrapper">
+        <div class="homeContainer">
+          <h1>Carbon Footprint Recommendation App</h1>
+          <br />
+
+          <p>Discover your carbon footprints</p>
+
+          <a href="{% url 'sign_inpage' %}">Start here >></a>
+        </div>
+      </section>
+      {% endblock %}
+    </div>
+  </body>
+</html>
